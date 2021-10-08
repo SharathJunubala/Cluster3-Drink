@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drink-deploy
+  namespace: drink
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: drink-deploy
+  template:
+    metadata:
+      labels:
+        app: drink-deploy
+    spec:
+      containers:
+      - name: drink-deploy
+        resources:
+        image: 104785239205.dkr.ecr.ap-south-1.amazonaws.com/cluster3-drink:abcd
+        ports:
+        - containerPort: 8082

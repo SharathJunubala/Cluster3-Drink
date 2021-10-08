@@ -1,6 +1,6 @@
 FROM httpd
 #RUN systemctl start httpd
-ENTRYPOINT [ "sh", "systemctl start httpd"]
+#ENTRYPOINT [ "sh", "systemctl start httpd"]
 RUN  apt-get update \
   && apt-get install -y wget \
   && apt-get install unzip -y \
